@@ -10,6 +10,8 @@ generate_password=document.querySelector("[generate_password]")
 
 circle=document.querySelector("[circle]")
 
+copyButton=document.querySelector("[copy]")
+
 //function to change display of password-length everytime slide is interacted
 function slider_connect(){
     pass_len.textContent=slider.value
@@ -109,3 +111,14 @@ function generate_pass(){
 
 //adding event listener to generating password
 generate_password.addEventListener('click',generate_pass);
+
+//making the function and event listener to copy the password to clipboard
+async function copyContent(){
+    try{
+        await navigator.clipboard.writeText(pass_box.value);
+    }catch(e){
+        console.log(e)
+    }
+}
+
+copyButton.addEventListener('click',copyContent)
