@@ -82,6 +82,26 @@ lowercase.addEventListener('change',set_pass_len_on_check)
 numbers.addEventListener('change',set_pass_len_on_check)
 symbols.addEventListener('change',set_pass_len_on_check)
 
+
+//function to shuffle the password string 
+
+function randomizeString(str) {
+    // Convert the string to an array of characters
+    let chars = str.split('');
+
+    // Use a loop to randomly shuffle the array
+    for (let i = chars.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [chars[i], chars[j]] = [chars[j], chars[i]];
+    }
+
+    // Convert the shuffled array back to a string
+    let shuffledStr = chars.join('');
+
+    // Return the shuffled string
+    return shuffledStr;
+}
+
 //function to generate password
 function generate_pass(){
     let pass=""
@@ -104,8 +124,7 @@ function generate_pass(){
         console.log(ret)
         pass+=ret
     }
-    console.log(pass)
-    pass_box.value=pass
+    pass_box.value=randomizeString(pass)
     circle.style.background=pass<=10?"red":"green";
 }
 
