@@ -5,53 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>         
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>My_JS_Pass_gen
     </title>
 </head>
 <body>
-    <div wrapper>
-        <h1>Password Generator</h1>
-        <!-- password generator div -->
-        <div>
-            <input placeholder="Password" pass_box>
-            <button copy>
-                <i class='fa fa-copy'></i>
-            </button>
-        </div>
-        <!-- new div for rest of page -->
-        <div>
+    <div wrapper class="flex flex-col  bg-purple-300 w-screen h-screen items-center justify-center">
+        <div class="flex flex-col gap-12 justify-center items-center w-full">
+            <h1 class="text-[32px] leading-[38px] font-serif font-bold">Password Generator</h1>
+            <!-- password generator div -->
             <div>
-                <h2>Password-length</h2>
-                <p pass_len>10</p>
-            </div>
-            <!-- slider div -->
-            <div>
-                <input type="range" min="1" max="20" value="10" slider>
-            </div>
-            <!-- checkboxes -->
-            <div>
-                <input type="checkbox" id="uppercase" name="uppercase">
-                <label for="uppercase">Include Uppercase letters</label><br>
-
-                <input type="checkbox" id="lowercase" name="lowercase">
-                <label for="lowercase">Include Lowercase letters</label><br>
-
-                <input type="checkbox" id="numbers" name="numbers">
-                <label for="numbers">Include Numbers</label><br>
-
-                <input type="checkbox" id="symbols" name="symbols">
-                <label for="symbols">Include Symbols</label><br>
-            </div>
-            <div>
-                <h2>Strength</h2>
-                <span class="dot"></span>
-            </div>
-            <!-- generate password button -->
-            <div>
-                <button generate_password>
-                    Generate Password
+                <input placeholder="Password" pass_box>
+                <button copy>
+                    <i class='fa fa-copy'></i>
                 </button>
+            </div>
+            <!-- new div for rest of page -->
+            <div>
+                <div>
+                    <h2>Password-length</h2>
+                    <p pass_len>10</p>
+                </div>
+                <!-- slider div -->
+                <div class="w-full">
+                    <input type="range" min="1" max="20" value="10" slider>
+                </div>
+                <!-- checkboxes -->
+                <div class="text-[20px]">
+                    <input type="checkbox" id="uppercase" name="uppercase">
+                    <label for="uppercase">Include Uppercase letters</label><br>
+
+                    <input type="checkbox" id="lowercase" name="lowercase">
+                    <label for="lowercase">Include Lowercase letters</label><br>
+
+                    <input type="checkbox" id="numbers" name="numbers">
+                    <label for="numbers">Include Numbers</label><br>
+
+                    <input type="checkbox" id="symbols" name="symbols">
+                    <label for="symbols">Include Symbols</label><br>
+                </div>
+                <div class="flex justify-between">
+                    <h2 class="text-[24px] font-normal">Strength</h2>
+                    <div circle class="w-5 h-5 bg-white rounded-full"></div>
+                </div>
+                <!-- generate password button -->
+                <div>
+                    <button generate_password>
+                        Generate Password
+                    </button>
+                </div>
             </div>
         </div>
     </div>

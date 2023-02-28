@@ -8,6 +8,8 @@ symbols=document.querySelector("input[name=symbols]")
 //add event listener to the generate_password button
 generate_password=document.querySelector("[generate_password]")
 
+circle=document.querySelector("[circle]")
+
 //function to change display of password-length everytime slide is interacted
 function slider_connect(){
     pass_len.textContent=slider.value
@@ -102,6 +104,7 @@ function generate_pass(){
     }
     console.log(pass)
     pass_box.value=pass
+    circle.style.background=pass<=10?"red":"green";
 }
 
 //adding event listener to generating password
