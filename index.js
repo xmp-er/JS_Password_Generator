@@ -1,0 +1,1 @@
+pass_box=document.querySelector("[pass_box]")//manipulate value using .value
