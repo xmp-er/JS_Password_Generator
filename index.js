@@ -82,21 +82,21 @@ symbols.addEventListener('change',set_pass_len_on_check)
 function generate_pass(){
     let pass=""
     let cnt=0;
+    let new_check_arr=[]
     for(i=0;i<4;i++){
         if(check_arr[i].checked){
             pass+=call_correspiding_functions(check_arr[i])
             cnt++
+            new_check_arr.push(check_arr[i])
         }
     }
     if(cnt==0){
-        setTimeout(function(){
-            alert("Please check at least one of the attributes")
-        },2000)
+        alert("Please check at least one of the attributes")
         return;
     }
     for(i=0;i<(slider.value-cnt);i++){
         let a=Math.floor(Math.random()*cnt)
-        let ret=call_correspiding_functions(check_arr[a])
+        let ret=call_correspiding_functions(new_check_arr[a])
         console.log(ret)
         pass+=ret
     }
